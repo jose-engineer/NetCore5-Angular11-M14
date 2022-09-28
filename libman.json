@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "dist/jquery.js",
+        "dist/jquery.min.js",
+        "dist/jquery.min.map",
+        "dist/jquery.slim.js",
+        "dist/jquery.slim.min.js",
+        "dist/jquery.slim.min.map"
+      ]
+    },
+    {
+      "library": "jquery-validation@1.19.3",
+      "destination": "wwwroot/lib/jquery-validation/",
+      "files": [
+        "dist/jquery.validate.min.js",
+        "dist/jquery.validate.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/",
+      "files": [
+        "dist/jquery.validate.unobtrusive.js",
+        "dist/jquery.validate.unobtrusive.min.js"
+      ]
+    },
+    {
+      "library": "bootstrap@4.6.0",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "dist/css/bootstrap-grid.css",
+        "dist/css/bootstrap-grid.css.map",
+        "dist/css/bootstrap-grid.min.css",
+        "dist/css/bootstrap-grid.min.css.map",
+        "dist/css/bootstrap-reboot.css",
+        "dist/css/bootstrap-reboot.css.map",
+        "dist/css/bootstrap-reboot.min.css",
+        "dist/css/bootstrap-reboot.min.css.map",
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap.css.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map",
+        "dist/js/bootstrap.bundle.js",
+        "dist/js/bootstrap.bundle.js.map",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/js/bootstrap.js",
+        "dist/js/bootstrap.js.map",
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.min.js.map"
+      ]
+    },
+    {
+      "library": "@fortawesome/fontawesome-free@5.15.2",
+      "destination": "wwwroot/lib/fortawesome/fontawesome-free/",
+      "files": [
+        "js/all.js",
+        "js/all.min.js",
+        "js/brands.js",
+        "js/brands.min.js",
+        "js/conflict-detection.js",
+        "js/conflict-detection.min.js",
+        "js/fontawesome.js",
+        "js/fontawesome.min.js",
+        "js/regular.js",
+        "js/regular.min.js",
+        "js/solid.js",
+        "js/solid.min.js",
+        "js/v4-shims.js",
+        "js/v4-shims.min.js",
+        "sprites/brands.svg",
+        "sprites/regular.svg",
+        "sprites/solid.svg"
+      ]
+    }
+  ]
+}
