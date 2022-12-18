@@ -72,7 +72,7 @@ namespace DutchTreat.Data
           };
         }
 
-        _ctx.SaveChanges();
+        _ctx.SaveChanges(); // save the data from json file to the SQL database
       }
     }
   }

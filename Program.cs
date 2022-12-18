@@ -19,7 +19,7 @@ namespace DutchTreat
 
       if (args.Length > 0 && args[0].ToLower() == "/seed")
       {
-        RunSeeding(host);
+        RunSeeding(host); //Instatiate and build up the seeding
         return;
       }
 

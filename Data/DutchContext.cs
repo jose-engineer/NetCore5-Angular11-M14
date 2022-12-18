@@ -31,7 +31,7 @@ namespace DutchTreat.Data
       bldr.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder) //Specify the mapping between your entities and the database
     {
       base.OnModelCreating(modelBuilder);
 
@@ -44,7 +44,7 @@ namespace DutchTreat.Data
         .HasColumnType("money");
 
       modelBuilder.Entity<Order>()
-        .HasData(new Order()
+        .HasData(new Order() //seeds fake data
         {
           Id = 1,
           OrderDate = DateTime.UtcNow,
