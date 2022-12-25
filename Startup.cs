@@ -52,7 +52,10 @@ namespace DutchTreat
           };
         });
 
-      services.AddDbContext<DutchContext>();
+      services.AddDbContext<DutchContext>(cfg =>
+      {
+          cfg.UseSqlServer(_config.GetConnectionString("DutchConnectionstring"));
+      });
       services.AddTransient<IMailService, NullMailService>();
 
       services.AddTransient<DutchSeeder>();

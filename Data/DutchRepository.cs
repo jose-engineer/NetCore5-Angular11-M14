@@ -82,15 +82,15 @@ namespace DutchTreat.Data
 
     public IEnumerable<Order> GetOrdersByUser(string username, bool includeItems)
     {
-      if (includeItems)
+      if (includeItems) 
       {
         return _ctx.Orders
-          .Include(o => o.Items)
+          .Include(o => o.Items) //if "includeItems" parameter is true return Items
           .ThenInclude(i => i.Product)
           .Where(o => o.User.UserName == username)
           .ToList();
       }
-      else
+      else //if "includeItems" parameter is false
       {
         return _ctx.Orders
           .Where(o => o.User.UserName == username)

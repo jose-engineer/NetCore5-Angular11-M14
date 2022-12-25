@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DutchTreat.Controllers
 {
-  [Route("api/orders/{orderId}/items")]
+  [Route("api/orders/{orderId}/items")] //url items is a subcontroller of "orders" controller
   [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
   public class OrderItemsController : Controller
   { 

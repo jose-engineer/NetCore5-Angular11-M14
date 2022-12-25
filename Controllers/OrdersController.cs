@@ -36,16 +36,16 @@ namespace DutchTreat.Controllers
     }
 
     [HttpGet]
-    public IActionResult Get(bool includeItems = true)
+    public IActionResult Get(bool includeItems = true) //if parameter includeItems not included use true, so it is an optional parameter when using query strings, query strings allows you to change behaviour of yur apis
     {
       try
       {
         var username = User.Identity.Name;
 
-        var results = _repository.GetOrdersByUser(username, includeItems);
+        var results = _repository.GetOrdersByUser(username, includeItems);//pass another parameter "includeItems"
 
-        return Ok(_mapper.Map<IEnumerable<OrderViewModel>>(results));
-      }
+                return Ok(_mapper.Map<IEnumerable<OrderViewModel>>(results)); //get "results" collection (IEnumerable<Order>) and map it to IEnumerable<OrderViewModel> or ICollection or OrderViewModel[]
+            }
       catch (Exception ex)
       {
         _logger.LogError($"Failed to return orders: {ex}" );
@@ -76,7 +76,7 @@ namespace DutchTreat.Controllers
       {
         if (ModelState.IsValid)  //validate model using OrderViewModel class properties
         {
-                    var newOrder = _mapper.Map<Order>(model);
+                    var newOrder = _mapper.Map<Order>(model); //map OrderViewModel to Order
 
                     //var newOrder = new Order()
                     //{
@@ -85,7 +85,7 @@ namespace DutchTreat.Controllers
                     //    OrderNumber = model.OrderNumber
                     //};
 
-          if (newOrder.OrderDate == DateTime.MinValue) //If OrderDate was not provided
+                    if (newOrder.OrderDate == DateTime.MinValue) //If OrderDate was not provided
           {
             newOrder.OrderDate = DateTime.Now;
           };
@@ -102,8 +102,8 @@ namespace DutchTreat.Controllers
                         //    OrderNumber = newOrder.OrderNumber                            
                         //};
                         //return Created($"/api/orders/{vm.OrderId}", vm);
-                        return Created($"/api/orders/{newOrder.Id}", _mapper.Map<OrderViewModel>(newOrder));
-          }
+                        return Created($"/api/orders/{newOrder.Id}", _mapper.Map<OrderViewModel>(newOrder));//map Order to OrderViewModel
+                    }
         }
         else
         {
