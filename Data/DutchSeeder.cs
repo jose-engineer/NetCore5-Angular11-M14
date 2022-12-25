@@ -52,7 +52,7 @@ namespace DutchTreat.Data
       if (!_ctx.Products.Any())
       {
         // Need to create the Sample Data
-        var file = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
+        var file = Path.Combine(_hosting.ContentRootPath, "Data/art.json"); //get seed data from this file
         var json = File.ReadAllText(file);
         var products = JsonSerializer.Deserialize<IEnumerable<Product>>(json);
         _ctx.Products.AddRange(products);

@@ -14,7 +14,7 @@ namespace DutchTreat.Data
     private readonly DutchContext _ctx;
     private readonly ILogger<DutchRepository> _logger;
 
-    public DutchRepository(DutchContext ctx, ILogger<DutchRepository> logger) 
+    public DutchRepository(DutchContext ctx, ILogger<DutchRepository> logger) //Inject ILogger interface using the class itself
     {
       _ctx = ctx;
       _logger = logger;
@@ -33,7 +33,7 @@ namespace DutchTreat.Data
       }
       catch (Exception ex)
       {
-        _logger.LogError($"Failed to get all products: {ex}");
+        _logger.LogError($"Failed to get all products: {ex}"); //catch error and you can log it to a database
         return null;
       }
     }
