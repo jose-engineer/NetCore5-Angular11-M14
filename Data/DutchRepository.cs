@@ -43,8 +43,8 @@ namespace DutchTreat.Data
       if (includeItems)
       {
         return _ctx.Orders
-          .Include(o => o.Items)
-          .ThenInclude(i => i.Product)
+          .Include(o => o.Items) //include deep hierarchy
+          .ThenInclude(i => i.Product) //include a deeper hierarchy
           .ToList();
       }
       else
@@ -60,7 +60,7 @@ namespace DutchTreat.Data
         .Include(o => o.Items)
         .ThenInclude(i => i.Product)
         .Where(o => o.Id == id && o.User.UserName == username)
-        .FirstOrDefault();
+        .FirstOrDefault(); //get a single Order not a List
     }
 
     public IEnumerable<Product> GetProductsByCategory(string category)

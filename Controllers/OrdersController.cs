@@ -53,7 +53,7 @@ namespace DutchTreat.Controllers
       }
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}")] //extend the base url and asks for an id with data type that we expect
     public IActionResult Get(int id)
     {
       try
@@ -70,13 +70,20 @@ namespace DutchTreat.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody]OrderViewModel model)
+    public async Task<IActionResult> Post([FromBody]OrderViewModel model) //Mapping from the body when Post
     {
       try
       {
-        if (ModelState.IsValid)
+        if (ModelState.IsValid)  //validate model using OrderViewModel class properties
         {
-          var newOrder = _mapper.Map<Order>(model);
+                    var newOrder = _mapper.Map<Order>(model);
+
+                    //var newOrder = new Order()
+                    //{
+                    //    Id = model.OrderId,
+                    //    OrderDate = model.OrderDate,   
+                    //    OrderNumber = model.OrderNumber
+                    //};
 
           if (newOrder.OrderDate == DateTime.MinValue)
           {
@@ -89,7 +96,13 @@ namespace DutchTreat.Controllers
           _repository.AddEntity(newOrder);
           if (_repository.SaveAll())
           {
-            return Created($"/api/orders/{newOrder.Id}", _mapper.Map<OrderViewModel>(newOrder));
+                        //var vm = new OrderViewModel() { 
+                        //    OrderId = newOrder.Id,
+                        //    OrderDate = newOrder.OrderDate,
+                        //    OrderNumber = newOrder.OrderNumber                            
+                        //};
+                        //return Created($"/api/orders/{vm.OrderId}", vm);
+                        return Created($"/api/orders/{newOrder.Id}", _mapper.Map<OrderViewModel>(newOrder));
           }
         }
         else

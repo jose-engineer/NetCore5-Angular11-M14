@@ -63,9 +63,9 @@ namespace DutchTreat
 
       services.AddControllersWithViews()
         .AddRazorRuntimeCompilation()
-        .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+        .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore); //ignore loop property public Order Order { get; set; } in OrderItemClass so you can remove it and display the rest of the properties
 
-      services.AddRazorPages();
+            services.AddRazorPages();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
