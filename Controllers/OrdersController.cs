@@ -85,7 +85,7 @@ namespace DutchTreat.Controllers
                     //    OrderNumber = model.OrderNumber
                     //};
 
-          if (newOrder.OrderDate == DateTime.MinValue)
+          if (newOrder.OrderDate == DateTime.MinValue) //If OrderDate was not provided
           {
             newOrder.OrderDate = DateTime.Now;
           };
@@ -93,7 +93,7 @@ namespace DutchTreat.Controllers
           var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
           newOrder.User = currentUser;
 
-          _repository.AddEntity(newOrder);
+          _repository.AddEntity(newOrder);  //When using ViewModel you Add Order not the ViewModel
           if (_repository.SaveAll())
           {
                         //var vm = new OrderViewModel() { 
