@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace DutchTreat.Data
 {
-  public class DutchContext : IdentityDbContext<StoreUser>
+  public class DutchContext : IdentityDbContext<StoreUser>  //use IdentityDbContext instead of DbContext only
   {
 
     private readonly IConfiguration _config;

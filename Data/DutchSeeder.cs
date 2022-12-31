@@ -34,7 +34,7 @@ namespace DutchTreat.Data
 
       if (user == null)
       {
-        user = new StoreUser()
+        user = new StoreUser() //create identity user
         {
           FirstName = "Shawn",
           LastName = "Wildermuth",
@@ -60,7 +60,7 @@ namespace DutchTreat.Data
         var order = _ctx.Orders.Where(o => o.Id == 1).FirstOrDefault();
         if (order != null)
         {
-          order.User = user;
+          order.User = user; //link identity user to the actual order
           order.Items = new List<OrderItem>()
           {
             new OrderItem()
