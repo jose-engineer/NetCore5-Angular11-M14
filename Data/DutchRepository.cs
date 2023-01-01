@@ -59,7 +59,7 @@ namespace DutchTreat.Data
       return _ctx.Orders
         .Include(o => o.Items)
         .ThenInclude(i => i.Product)
-        .Where(o => o.Id == id && o.User.UserName == username)
+        .Where(o => o.Id == id && o.User.UserName == username) //Get that particular item that belongs to that username
         .FirstOrDefault(); //get a single Order not a List
     }
 
@@ -87,7 +87,7 @@ namespace DutchTreat.Data
         return _ctx.Orders
           .Include(o => o.Items) //if "includeItems" parameter is true return Items
           .ThenInclude(i => i.Product)
-          .Where(o => o.User.UserName == username)
+          .Where(o => o.User.UserName == username) //get orders in the context of the logged username
           .ToList();
       }
       else //if "includeItems" parameter is false

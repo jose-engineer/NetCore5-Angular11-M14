@@ -91,7 +91,7 @@ namespace DutchTreat.Controllers
           };
 
           var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
-          newOrder.User = currentUser;
+          newOrder.User = currentUser; //link new order created with the current user
 
           _repository.AddEntity(newOrder);  //When using ViewModel you Add Order not the ViewModel
           if (_repository.SaveAll())
