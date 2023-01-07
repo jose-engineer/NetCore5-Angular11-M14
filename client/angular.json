@@ -39,8 +39,8 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "../wwwroot/client",
+          "options": { // "outputPath": "dist/client"
+            "outputPath": "../wwwroot/client", // build client files into wwwroot/client, so make dist folder available to razor pages so we can use those files
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

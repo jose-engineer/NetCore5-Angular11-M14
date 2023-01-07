@@ -1,4 +1,10 @@
 ﻿@model IEnumerable<Product>
+@*@section Scripts {       
+    <script src="~/ts/shopper.js"></script>    
+    <script src="~/ts/main.js"></script>
+}*@
+
+@*Scripts for Angular, should be comming from "wwwroot/client" so you can use it on razor pages*@
 @section Scripts {
   <script src="~/client/vendor.js"></script>
   <script src="~/client/polyfills.js"></script>
@@ -9,7 +15,9 @@
   <base href="/App/Shop" />
   <link href="~/client/styles.css" rel="stylesheet" />
 }
+
 <the-shop></the-shop>
+
 @*<h1>Shop</h1>
   <p>Count: @Model.Count()</p>
   <div class="row">
