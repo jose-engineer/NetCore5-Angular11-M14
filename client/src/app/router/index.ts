@@ -12,7 +12,7 @@ const routes = [
 ];
 
 const router = RouterModule.forRoot(routes, {
-  useHash: false
+  useHash: false //if true, use a # in the url for linking pages
 });
 
 export default router;
