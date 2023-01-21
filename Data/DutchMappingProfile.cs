@@ -18,8 +18,8 @@ namespace DutchTreat.Data
         .ReverseMap(); //take the previous map on line 17 and create another map in the opposite order
 
       CreateMap<OrderItem, OrderItemViewModel>()
-        .ReverseMap()
-        .ForMember(m => m.Product, opt => opt.Ignore());
-    }
+        .ReverseMap() //Going from OrderItem to OrderItemViewModel
+        .ForMember(m => m.Product, opt => opt.Ignore()); //we are saying not to map when we go from OrderItemViewModel to OrderItem the Product to the ProductId. Since OrderItemViewModel already has a ProdcutId on it will naturally map it back to our ProdcutId so that the FK still continue to work, we are just including the product in the OrderItem so we can refer to it in the client.
+        }
   }
 }

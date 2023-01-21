@@ -52,7 +52,7 @@ namespace DutchTreat.Controllers
       return View();
     }
 
-    [Authorize]
+    //[Authorize] //we remove this because we want the user can shop without an account
     public IActionResult Shop()
     {
       var results = _repository.GetAllProducts();

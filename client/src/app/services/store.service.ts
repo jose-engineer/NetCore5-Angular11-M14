@@ -39,13 +39,13 @@ export class Store {
   }
 
   checkout() {
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`);
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`); //create header auth object
 
     return this.http.post("/api/orders", this.order, {
       headers: headers
     })
       .pipe(map(() => {
-        this.order = new Order();
+        this.order = new Order(); //clear out the old order and create a brand new order to start a new operation with
       }));
   }
 

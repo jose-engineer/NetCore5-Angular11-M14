@@ -8,7 +8,7 @@ const routes = [
   { path: "", component: ShopPage },
   { path: "checkout", component: CheckoutPage, canActivate: [AuthActivator] },
   { path: "login", component: LoginPage },
-  { path: "**", redirectTo: "/" }
+  { path: "**", redirectTo: "/" } //fallback route (catch all): if none of the other routes work, redirect to... ShopPage
 ];
 
 const router = RouterModule.forRoot(routes, {

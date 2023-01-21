@@ -76,7 +76,7 @@ namespace DutchTreat.Controllers
       {
         if (ModelState.IsValid)  //validate model using OrderViewModel class properties
         {
-                    var newOrder = _mapper.Map<Order>(model); //map OrderViewModel to Order
+                    var newOrder = _mapper.Map<Order>(model); //map OrderViewModel to Order, we create ProductId because of this
 
                     //var newOrder = new Order()
                     //{

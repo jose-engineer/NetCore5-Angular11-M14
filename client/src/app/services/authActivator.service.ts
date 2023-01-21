@@ -13,8 +13,8 @@ export class AuthActivator implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-    if (this.store.loginRequired) {
-      this.router.navigate(["login"])
+    if (this.store.loginRequired) {  //validate loginRequired property from Store service/class
+      this.router.navigate(["login"]) //this "login" needs to be in the routes
       return false;
     } else {
       return true;
